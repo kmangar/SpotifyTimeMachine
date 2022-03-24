@@ -15,8 +15,8 @@ soup = BeautifulSoup(chart, "html.parser")
 
 song_titles = [title.text.strip() for title in soup.find_all(name="h3", class_="u-letter-spacing-0021", id="title-of-a-story")]
 scraped_art = [artist.getText().strip("\n") for artist in soup.find_all(name="span", class_="c-label")]
-print(scraped_art)
-print(song_titles)
+# print(scraped_art)
+# print(song_titles)
 
 # print(song_titles[::3][1])
 valueToBeRemoved = 'Imprint/Promotion Label:'
@@ -41,12 +41,12 @@ artist_names = [artist.split(" Featuring")[0].split(" Duet")[0].replace("Ke$ha",
                 ]
 
 artist_names = [x.replace('\t', '').replace('\n', '').replace('NEW', '').replace('-', '').replace('0', '').replace('1', '').replace('2', '').replace('3', '').replace('4', '').replace('5', '').replace('6', '').replace('7', '').replace('8', '').replace('9', '') for x in artist_names ]
-print(song_names)
+# print(song_names)
 
 while "" in artist_names:
     artist_names.remove("")
 
-print(artist_names)
+# print(artist_names)
 
 
 def authorization_flow(scope=""):
